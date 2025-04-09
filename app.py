@@ -11,8 +11,7 @@ import pandas as pd
 # ---------------------------
 
 #Application Insights の接続文字列
-APPINSIGHTS_CONNECTION_STRING = "InstrumentationKey=#Application Insights の接続文字列"
-
+APPINSIGHTS_CONNECTION_STRING = os.environ.get("APPINSIGHTS_CONNECTION_STRING")
 logger = logging.getLogger(__name__)
 logger.addHandler(AzureLogHandler(connection_string=APPINSIGHTS_CONNECTION_STRING))
 logger.setLevel(logging.INFO)
@@ -21,8 +20,8 @@ logger.setLevel(logging.INFO)
 # Azure Blob Storage 設定
 # ---------------------------
 #Azure Blob Storage の接続文字列、コンテナ名
-AZURE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=ncwprojecta002;AccountKey=Azure Blob Storage の接続文字列"
-CONTAINER_NAME = "コンテナ名"
+AZURE_CONNECTION_STRING = os.environ.get("AZURE_CONNECTION_STRING")
+CONTAINER_NAME = index-test
 
 blob_service_client = BlobServiceClient.from_connection_string(AZURE_CONNECTION_STRING)
 container_client = blob_service_client.get_container_client(CONTAINER_NAME)
@@ -86,8 +85,8 @@ st.header("📄 Application Insights ログ")
 if st.button("▶️ ログを表示する"):
     # Application Insights 
     # アプリケーションIDとAPIキーを設定
-    app_id = "app_id"
-    api_key = "api_key"
+    app_id = 3a6c59cb-2d3f-40f3-8cae-3030299e0014
+    api_key = iddenvuibwmxkjx00la2lvahg77m2c32vzx7uzwn
 
     query = """
     traces
