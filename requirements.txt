@@ -1,0 +1,5 @@
+streamlit
+pandas
+azure-storage-blob
+opencensus-ext-azure
+requests
