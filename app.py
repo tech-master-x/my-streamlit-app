@@ -21,7 +21,7 @@ logger.setLevel(logging.INFO)
 # ---------------------------
 #Azure Blob Storage の接続文字列、コンテナ名
 AZURE_CONNECTION_STRING = os.environ.get("AZURE_CONNECTION_STRING")
-CONTAINER_NAME = index-test
+CONTAINER_NAME = "index-test"
 
 blob_service_client = BlobServiceClient.from_connection_string(AZURE_CONNECTION_STRING)
 container_client = blob_service_client.get_container_client(CONTAINER_NAME)
