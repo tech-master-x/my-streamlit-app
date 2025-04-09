@@ -85,8 +85,8 @@ st.header("📄 Application Insights ログ")
 if st.button("▶️ ログを表示する"):
     # Application Insights 
     # アプリケーションIDとAPIキーを設定
-    app_id = 3a6c59cb-2d3f-40f3-8cae-3030299e0014
-    api_key = iddenvuibwmxkjx00la2lvahg77m2c32vzx7uzwn
+    app_id = os.environ.get("AI_APP_ID")
+    api_key = os.environ.get("AI_API_KEY")
 
     query = """
     traces
